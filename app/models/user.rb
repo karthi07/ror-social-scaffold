@@ -38,4 +38,10 @@ class User < ApplicationRecord
     friends.include?(user)
   end
 
+  def add_friend(user_id)
+    
+    invite = Invitation.new(user_id: self.id,friend_id: user_id,is_accepted: false )
+    invite.save
+  end
+
 end
