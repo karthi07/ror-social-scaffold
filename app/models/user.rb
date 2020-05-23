@@ -17,7 +17,7 @@ class User < ApplicationRecord
     #friends_array + inverse_invitations.select {|invite|  invite.is_accepted == true}
     #friends_array.map { |user| user.friend_id}
     friends_array = invitations.map{|invite| invite.friend_id if invite.is_accepted == true}
-    friends_array + inverse_invitations.map{|invite| invite.user_id if invite.is_accepted == true}
+    friends_array += inverse_invitations.map{|invite| invite.user_id if invite.is_accepted == true}
     friends_array.compact
   end
 

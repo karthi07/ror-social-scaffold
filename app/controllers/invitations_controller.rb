@@ -10,7 +10,9 @@ class InvitationsController < ApplicationController
 
   def destroy
     invite = Invitation.find_by(user_id: params[:user_id],friend_id: current_user.id )
-    invite.delete
+    inverse_invite = Invitation.find_by(user_id: current_user.id,friend_id: params[:user_id])
+    invite.delete if invite
+    inverse_invite.delete if inverse_invite
     redirect_to current_user
   end
 
