@@ -8,11 +8,15 @@ class InvitationsController < ApplicationController
     redirect_to current_user
   end
 
-  
-
   def destroy
     invite = Invitation.find_by(user_id: params[:user_id],friend_id: current_user.id )
     invite.delete
+    redirect_to current_user
+  end
+
+  def accept_invite
+    current_user.confirm_friend(User.find(params[:user_id]))
+    flash[:notice] = 'Friend request accepted'
     redirect_to current_user
   end
 
