@@ -13,9 +13,12 @@ class User < ApplicationRecord
   has_many :inverse_invitations, class_name: :Invitation , foreign_key: :friend_id
 
   def friends
-    friends_array = invitations.map{|invite| invite.friend_id if invite.is_accepted}
-    friends_array + inverse_invitations.map{|invite| invite.user if invite.is_accepted}
-    friends_array.compact
+    #friends_array = invitations.map{|invite| invite.friend }.compact
+    #friends_array = invitations
+    friends_array = invitations.select {|invite|  invite.is_accepted == true}
+    friends_array.user_id
+    #invitations.all
+#    friends_array + inverse_invitations.map{|invite| invite.user if invite.is_accepted}
   end
 
   # Users who have yet to confirme friend requests
@@ -35,6 +38,6 @@ class User < ApplicationRecord
   end
 
   def friend?(user)
-    friends.include?(user)
+    friends.include?(user.id)
   end
 end
