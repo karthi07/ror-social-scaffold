@@ -6,8 +6,10 @@
           <button><%= link_to 'Accept request', accept_friend_path(user_id: user.id) , method: :post %></button>
           <button><%= link_to 'Reject request', remove_friend_path(user_id: user.id) , method: :delete %></button>
         <% else %>
-          
-          <% if @pending_requests.include?(user) %>
+          <p> <%= current_user.friends %></p>
+          <% if current_user.friends.include?(user.id) %>
+            <button><%= link_to 'Friends', '#' %></button> 
+          <% elsif @pending_requests.include?(user) %>
             <button><%= link_to 'Request Pending', '#' %></button> 
 
           <% elsif user != current_user %>
