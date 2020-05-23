@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   end
   
   resources :invitations, only: [:create, :destroy]
-  post 'add_friend', to: 'invitations#create'
+
+  delete 'remove_friend', to: 'invitations#destroy'
   
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
