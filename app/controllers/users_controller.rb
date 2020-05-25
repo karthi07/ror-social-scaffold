@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   end
 
   def add_friend()
-    byebug
     current_user.add_friend(params[:friend_id])
     render 'index'
   end
