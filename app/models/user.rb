@@ -13,11 +13,8 @@ class User < ApplicationRecord
   has_many :inverse_invitations, class_name: :Invitation , foreign_key: :friend_id
 
   def friends
-    #friends_array = invitations.select {|invite|  invite.is_accepted == true}
-    #friends_array + inverse_invitations.select {|invite|  invite.is_accepted == true}
-    #friends_array.map { |user| user.friend_id}
-    friends_array = invitations.map{|invite| invite.friend_id if invite.is_accepted == true}
-    friends_array += inverse_invitations.map{|invite| invite.user_id if invite.is_accepted == true}
+    friends_array = invitations.map{|invite| invite.friend if invite.is_accepted == true}
+    friends_array += inverse_invitations.map{|invite| invite.user if invite.is_accepted == true}
     friends_array.compact
   end
 
@@ -38,6 +35,6 @@ class User < ApplicationRecord
   end
 
   def friend?(user)
-    friends.include?(user.id)
+    friends.include?(user)
   end
 end
