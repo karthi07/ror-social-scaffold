@@ -12,26 +12,26 @@ class User < ApplicationRecord
   has_many :invitations
   has_many :inverse_invitations, class_name: :Invitation, foreign_key: :friend_id
 
+
+  has_many :pending_invitations, -> { where is_accepted: false }, class_name: "Invitation", foreign_key: "user_id"
+  has_many :pending_friends, through: :pending_invitations, source: :friend
+  has_many :inverse_pending_invitations, -> { where is_accepted: false }, class_name: "Invitation", foreign_key: "friend_id"
+  has_many :inverse_pending_friends, through: :inverse_pending_invitations, source: :user
+
+  
   def friends
     friends_array = invitations.map { |invite| invite.friend if invite.is_accepted == true }
     friends_array += inverse_invitations.map { |invite| invite.user if invite.is_accepted == true }
     friends_array.compact
   end
 
-  # Users who have yet to confirme friend requests
-  def pending_requests
-    invitations.map { |invite| invite.friend unless invite.is_accepted }.compact
-  end
-
-  # Users who have requested to be friends
-  def friend_requests
-    inverse_invitations.map { |invite| invite.user unless invite.is_accepted }.compact
-  end
-
   def confirm_friend(user)
-    confrimation = inverse_invitations.find { |invite| invite.user == user }
+    
+    confrimation = Invitation.find { |invite| invite.user == user }
     confrimation.is_accepted = true
     confrimation.save
+    revese_confirmation = self.invitations.build(friend_id: user.id, is_accepted: true)
+    revese_confirmation.save
   end
 
   def friend?(user)
