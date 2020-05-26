@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Friend Request', type: :feature do
-  $user1 = ['user1', 'user1@test.com', 'password1']
-  $user2 = ['user2', 'user2@test.com', 'password2']
+  user1 = ['user1', 'user1@test.com', 'password1']
+  user2 = ['user2', 'user2@test.com', 'password2']
 
   before(:all) do
     sign_up('user1', 'user1@test.com', 'password1', 'password1')
@@ -12,49 +12,45 @@ RSpec.describe 'Friend Request', type: :feature do
   end
 
   scenario 'Add friend' do
-    login($user2[1], $user2[2])
+    login(user2[1], user2[2])
     visit users_path
-    save_and_open_page
     click_link 'Invite to friendship'
     expect(page).to have_content('Request Pending')
   end
 
   scenario 'Accept friend Request' do
-    login($user2[1], $user2[2])
+    login(user2[1], user2[2])
     visit users_path
     click_link 'Invite to friendship'
     click_on 'Sign out'
-    login($user1[1], $user1[2])
+    login(user1[1], user1[2])
     visit users_path
     click_link 'Accept request'
-    save_and_open_page
     expect(page).to have_content('Friend request accepted')
     expect(page).to have_content('Unfriend')
   end
 
   scenario 'Reject friend Request' do
-    login($user2[1], $user2[2])
+    login(user2[1], user2[2])
     visit users_path
     click_link 'Invite to friendship'
     click_on 'Sign out'
-    login($user1[1], $user1[2])
+    login(user1[1], user1[2])
     visit users_path
     click_link 'Reject request'
-    save_and_open_page
     expect(page).to have_content('Invite to friendship')
   end
 
   scenario 'Unfriend' do
-    login($user2[1], $user2[2])
+    login(user2[1], user2[2])
     visit users_path
     click_link 'Invite to friendship'
     click_on 'Sign out'
-    login($user1[1], $user1[2])
+    login(user1[1], user1[2])
     visit users_path
     click_link 'Accept request'
     expect(page).to have_content('Friend request accepted')
     click_link 'Unfriend'
-    save_and_open_page
     expect(page).to have_content('Invite to friendship')
   end
 end

@@ -13,8 +13,8 @@ class User < ApplicationRecord
   has_many :inverse_invitations, class_name: :Invitation, foreign_key: :friend_id
 
   def friends
-    friends_array = invitations.map{|invite| invite.friend if invite.is_accepted == true}
-    friends_array += inverse_invitations.map{|invite| invite.user if invite.is_accepted == true}
+    friends_array = invitations.map { |invite| invite.friend if invite.is_accepted == true }
+    friends_array += inverse_invitations.map { |invite| invite.user if invite.is_accepted == true }
     friends_array.compact
   end
 

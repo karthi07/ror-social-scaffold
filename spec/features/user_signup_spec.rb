@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'signup page', type: :feature do
   scenario 'signup with same conf password' do
-    sign_up('user1', 'user1@test.com', 'password1', 'password1')
+    sign_up('user1', 'usertest@test.com', 'password1', 'password1')
     expect(page).to have_content('Welcome! You have signed up successfully')
   end
 
