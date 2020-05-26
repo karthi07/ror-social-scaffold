@@ -4,7 +4,7 @@
 
 ## How it works 
 
-- Should able to see all the list of friends and can send friendship request to others, but to self.
+- Should able to see all the list of friends and can send friendship request to others, but not to self.
 
 ![Screenshot from 2020-05-26 14-06-07](https://user-images.githubusercontent.com/55361440/82879675-e5d47300-9f5a-11ea-9f3c-d6b2bb48de70.png)
 
