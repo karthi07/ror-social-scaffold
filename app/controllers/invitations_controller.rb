@@ -1,8 +1,13 @@
 class InvitationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :invite_parmas, only: %i[create]
 
   def create
-    invite = current_user.invitations.build(invite_parmas)
+    if current_user.inverse_pending_friends.to_a.include? User.find(params[:friend_id])
+      redirect_to users_path and return
+    end
+
+    invite = current_user.invitations.build(friend_id: params[:friend_id], is_accepted: false)
     invite.is_accepted = false
     invite.save
     redirect_to users_path
