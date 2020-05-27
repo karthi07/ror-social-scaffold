@@ -17,13 +17,9 @@ class User < ApplicationRecord
   has_many :pending_friends, through: :pending_invitations, source: :friend
   has_many :inverse_pending_invitations, -> { where is_accepted: false }, class_name: "Invitation", foreign_key: "friend_id"
   has_many :inverse_pending_friends, through: :inverse_pending_invitations, source: :user
+  has_many :accepted_invitations, -> { where is_accepted: true}, class_name: "Invitation", foreign_key: 'user_id'
+  has_many :friends, through: :accepted_invitations, source: :friend
 
-  
-  def friends
-    friends_array = invitations.map { |invite| invite.friend if invite.is_accepted == true }
-    friends_array += inverse_invitations.map { |invite| invite.user if invite.is_accepted == true }
-    friends_array.compact
-  end
 
   def confirm_friend(user)
     
