@@ -24,6 +24,10 @@
 
 ![Screenshot from 2020-05-26 14-09-09](https://user-images.githubusercontent.com/55361440/82880963-b3c41080-9f5c-11ea-8afa-18f14303e3a7.png)
 
+## Live link(Heroku)
+
+- https://jassi-kartick-social-media-app.herokuapp.com
+
 ## Built With
 
 - Ruby v2.7.0
