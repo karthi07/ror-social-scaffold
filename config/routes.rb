@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'invitation/destroy'
   root 'posts#index'
 
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
 
   resources :users, only: [:index, :show]
   resources :posts, only: [:index, :create] do
