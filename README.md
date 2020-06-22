@@ -2,6 +2,50 @@
 
 > This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
 
+## Live link(Heroku)
+
+- https://jassi-kartick-social-media-app.herokuapp.com
+
+### Prerequisites
+
+Ruby: v2.7.0
+Rails: v5.2.4
+Postgres: >=9.5
+
+## Built With
+
+- Ruby v2.7.0
+- Ruby on Rails v5.2.4
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Setup
+
+```bash
+git clone git@github.com:karthi07/ror-social-scaffold.git
+cd ror-social-scaffold
+bundle install
+```
+
+Setup database with:
+
+```bash
+   rails db:create
+   rails db:migrate
+```
+
+### Usage
+
+Start server with:
+
+```bash
+    rails server
+```
+
+Open `http://localhost:3000/` in your browser.
+
 ## How it works 
 
 - Should able to see all the list of friends and can send friendship request to others, but not to self.
@@ -24,52 +68,6 @@
 
 ![Screenshot from 2020-05-26 14-09-09](https://user-images.githubusercontent.com/55361440/82880963-b3c41080-9f5c-11ea-8afa-18f14303e3a7.png)
 
-## Live link(Heroku)
-
-- https://jassi-kartick-social-media-app.herokuapp.com
-
-## Built With
-
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-Ruby: v2.7.0
-Rails: v5.2.4
-Postgres: >=9.5
-
-### Setup
-
-Instal gems with:
-
-```
-bundle install
-```
-
-Setup database with:
-
-```
-   rails db:create
-   rails db:migrate
-```
-
-
-
-### Usage
-
-Start server with:
-
-```
-    rails server
-```
-
-Open `http://localhost:3000/` in your browser.
-
 ### Run tests
 
 ```
@@ -86,6 +84,7 @@ Open `http://localhost:3000/` in your browser.
 - [LinkedIn](https://www.linkedin.com/in/jaspreet-singh-a28286146/)
 - [GitHub](https://github.com/jaspreet-singh-sahota)
 - [E-mail](jaspreetsinghjassi01@gmail.com)
+- [Portfolio](https://jaspreet-singh-portfolio.netlify.app/)
 
 👤 **Kartick** 
     
@@ -105,8 +104,5 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 microverse
-
-## 📝 License
-
-TBA
+The odin project
 
