@@ -1,7 +1,16 @@
-# Scaffold for social media app with Ruby on Rails
+<p align="center">
+ 
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
-
+  <h1 align="center"> Social Media App</h1>
+  <p align="center">
+  <img width="61" alt="rails" src="https://user-images.githubusercontent.com/5237154/85113533-0da2b800-b235-11ea-95ac-31b896096efe.png"> &emsp;
+  <img width="61" alt="ajax" src="https://user-images.githubusercontent.com/5237154/85926619-2d358280-b8be-11ea-8782-8bcd23023cd3.png"> &emsp;
+  <img width="61" alt="bootstrap" src="https://user-images.githubusercontent.com/5237154/85926622-2f97dc80-b8be-11ea-8fce-592b244198d0.png"> &emsp;
+  </p>
+</p>
+<p align="center">
+This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+</p>
 ## Live link(Heroku)
 
 - https://jassi-kartick-social-media-app.herokuapp.com
