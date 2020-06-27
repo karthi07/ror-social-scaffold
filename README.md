@@ -9,8 +9,9 @@
   </p>
 </p>
 <p align="center">
-This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+Its a social media app with these functionalities:  1. Friendship invite model and association with User model 2. bind the model and association with Controller and UI. 3. All Major functionalities for friendship request. 4. Model testing and Integration testing
 </p>
+
 ## Live link(Heroku)
 
 - https://jassi-kartick-social-media-app.herokuapp.com
@@ -83,7 +84,6 @@ Open `http://localhost:3000/` in your browser.
     rpsec --format documentation
 ```
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
 
 ## Authors
