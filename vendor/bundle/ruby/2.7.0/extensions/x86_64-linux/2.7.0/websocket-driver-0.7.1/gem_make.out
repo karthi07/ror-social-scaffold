@@ -1,0 +1,15 @@
+current directory: /home/jaspreet/Desktop/rails/ror-social-scaffold/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+/home/jaspreet/.rbenv/versions/2.7.0/bin/ruby -I /home/jaspreet/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20200522-17355-7a2upe.rb extconf.rb
+creating Makefile
+
+current directory: /home/jaspreet/Desktop/rails/ror-social-scaffold/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/jaspreet/Desktop/rails/ror-social-scaffold/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/jaspreet/Desktop/rails/ror-social-scaffold/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20200522-17355-1cyfo6
